@@ -14,6 +14,7 @@
 		"commands" : 
 		[
 			"add_executable",
+			"install",
 			"target_link_libraries",
 			"sfml_add_external",
 			"sfml_find_package",
@@ -40,6 +41,12 @@
 			{
 				"command" : 1,
 				"file" : 0,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
 				"line" : 37,
 				"parent" : 0
 			},
@@ -47,66 +54,66 @@
 				"file" : 1
 			},
 			{
-				"command" : 1,
+				"command" : 2,
 				"file" : 1,
 				"line" : 93,
-				"parent" : 3
+				"parent" : 4
 			},
 			{
 				"file" : 2
 			},
 			{
-				"command" : 1,
+				"command" : 2,
 				"file" : 2,
 				"line" : 298,
-				"parent" : 5
-			},
-			{
-				"command" : 3,
-				"file" : 2,
-				"line" : 326,
-				"parent" : 5
-			},
-			{
-				"command" : 2,
-				"file" : 3,
-				"line" : 401,
-				"parent" : 7
-			},
-			{
-				"command" : 1,
-				"file" : 3,
-				"line" : 357,
-				"parent" : 8
-			},
-			{
-				"command" : 1,
-				"file" : 2,
-				"line" : 342,
-				"parent" : 5
-			},
-			{
-				"command" : 3,
-				"file" : 1,
-				"line" : 126,
-				"parent" : 3
-			},
-			{
-				"command" : 2,
-				"file" : 3,
-				"line" : 401,
-				"parent" : 11
-			},
-			{
-				"command" : 1,
-				"file" : 3,
-				"line" : 357,
-				"parent" : 12
+				"parent" : 6
 			},
 			{
 				"command" : 4,
+				"file" : 2,
+				"line" : 326,
+				"parent" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 401,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 357,
+				"parent" : 9
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 342,
+				"parent" : 6
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 126,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 401,
+				"parent" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 357,
+				"parent" : 13
+			},
+			{
+				"command" : 5,
 				"file" : 0,
-				"line" : 39,
+				"line" : 63,
 				"parent" : 0
 			}
 		]
@@ -117,32 +124,32 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17"
+					"fragment" : "-g -std=gnu++11"
 				},
 				{
-					"backtrace" : 14,
+					"backtrace" : 15,
 					"fragment" : "-Wall"
 				},
 				{
-					"backtrace" : 14,
+					"backtrace" : 15,
 					"fragment" : "-Wextra"
 				},
 				{
-					"backtrace" : 14,
+					"backtrace" : 15,
 					"fragment" : "-Wpedantic"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "SFML_STATIC"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "D:/proga/05/build/_deps/sfml-src/include"
 				}
 			],
@@ -153,7 +160,7 @@
 				[
 					1
 				],
-				"standard" : "17"
+				"standard" : "11"
 			},
 			"sourceIndexes" : 
 			[
@@ -172,19 +179,33 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "sfml-system::@8cb1db2982443611e568"
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "sfml-window::@5730451e331e3690ae65"
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "sfml-graphics::@98af38147d5fa7e70f61"
 		}
 	],
 	"id" : "physics::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
 	"link" : 
 	{
 		"commandFragments" : 
@@ -198,37 +219,37 @@
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 2,
+				"backtrace" : 3,
 				"fragment" : "_deps\\sfml-build\\lib\\libsfml-graphics-s-d.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 5,
 				"fragment" : "_deps\\sfml-build\\lib\\libsfml-window-s-d.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 6,
+				"backtrace" : 7,
 				"fragment" : "_deps\\sfml-build\\lib\\libsfml-system-s-d.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 9,
+				"backtrace" : 10,
 				"fragment" : "-lopengl32",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 10,
+				"backtrace" : 11,
 				"fragment" : "-lwinmm",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 10,
+				"backtrace" : 11,
 				"fragment" : "-lgdi32",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
+				"backtrace" : 14,
 				"fragment" : "_deps\\sfml-src\\extlibs\\libs-mingw\\x64\\libfreetype.a",
 				"role" : "libraries"
 			},
