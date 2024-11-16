@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.7.2)
 project(physics)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
 # Пытаемся найти предустановленный SFML
 find_package(SFML COMPONENTS graphics)
@@ -36,6 +36,30 @@ add_executable(physics
         black_box/Application.cpp black_box/View.cpp black_box/PainterImpl.cpp)
 target_link_libraries(physics PRIVATE sfml-graphics)
 
+set(CMAKE_INSTALL_PREFIX "/usr/local")  # Установка по умолчанию
+
+install(TARGETS physics DESTINATION bin)
+
+if(APPLE)
+    set(CPACK_GENERATOR "DMG")  # Для macOS используем DMG
+    set(CPACK_PACKAGE_FILE_NAME "MyExecutable-macos")  # Имя пакета для macOS
+elseif(UNIX)
+    set(CPACK_GENERATOR "DEB")  # Для Linux используем DEB
+    set(CPACK_PACKAGE_FILE_NAME "MyExecutable-linux")  # Имя пакета для Linux
+else()
+    set(CPACK_GENERATOR "ZIP")  # Для Windows используем ZIP
+    set(CPACK_PACKAGE_FILE_NAME "MyExecutable-windows")  # Имя пакета для Windows
+endif()
+
+set(CPACK_PACKAGE_VERSION "0.1.0")
+set(CPACK_PACKAGE_DESCRIPTION "MyExecutable package description")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Your Name <your.email@example.com>")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.3.1-6)")
+set(CPACK_PACKAGE_CONTACT "Your Name <your.email@example.com>")
+set(CPACK_PACKAGE_HOMEPAGE "https://example.com")
+set(CPACK_PACKAGE_LICENSE "MIT")
+
+include(CPack)  # Включение CPack
 target_compile_options(physics PRIVATE
         $<$<CXX_COMPILER_ID:MSVC>:/W4>
         $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
